@@ -1,0 +1,44 @@
+{
+  "name": "servicenow-id-search",
+  "version": "0.0.1",
+  "description": "A tool for searching ServiceNow instances",
+  "main": "/src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atcwells/idSearch.git"
+  },
+  "scripts": {
+    "build": "build_servicenow_client"
+  },
+  "author": "Alex Wells, Martin Perry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atcwells/idSearch/issues"
+  },
+  "homepage": "https://github.com/atcwells/idSearch#readme",
+  "browserify": {
+    "transform": [
+      "ngify"
+    ]
+  },
+  "dependencies": {
+    "angular": "1.2.2"
+  },
+  "devDependencies": {
+    "ngify": "^1.4.1",
+    "servicenowify": "0.0.19"
+  },
+  "servicenowify": {
+    "name": "opsdui",
+    "sourcedir": "/src",
+    "distdir": "/dist",
+    "distfile": "deploy.js",
+    "jobs": [
+      "browserify",
+      "uglify"
+    ]
+  }
+}
